@@ -1,0 +1,64 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = ATM.o Screen.o Keypad.o CashDispenser.o DepositSlot.o Account.o BankDatabase.o Transaction.o BalanceInquiry.o Withdrawl.o Deposit.o Start.o "RUN\ ATM.o"
+LINKOBJ  = ATM.o Screen.o Keypad.o CashDispenser.o DepositSlot.o Account.o BankDatabase.o Transaction.o BalanceInquiry.o Withdrawl.o Deposit.o Start.o "RUN ATM.o"
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project2.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+ATM.o: ATM.cpp
+	$(CPP) -c ATM.cpp -o ATM.o $(CXXFLAGS)
+
+Screen.o: Screen.cpp
+	$(CPP) -c Screen.cpp -o Screen.o $(CXXFLAGS)
+
+Keypad.o: Keypad.cpp
+	$(CPP) -c Keypad.cpp -o Keypad.o $(CXXFLAGS)
+
+CashDispenser.o: CashDispenser.cpp
+	$(CPP) -c CashDispenser.cpp -o CashDispenser.o $(CXXFLAGS)
+
+DepositSlot.o: DepositSlot.cpp
+	$(CPP) -c DepositSlot.cpp -o DepositSlot.o $(CXXFLAGS)
+
+Account.o: Account.cpp
+	$(CPP) -c Account.cpp -o Account.o $(CXXFLAGS)
+
+BankDatabase.o: BankDatabase.cpp
+	$(CPP) -c BankDatabase.cpp -o BankDatabase.o $(CXXFLAGS)
+
+Transaction.o: Transaction.cpp
+	$(CPP) -c Transaction.cpp -o Transaction.o $(CXXFLAGS)
+
+BalanceInquiry.o: BalanceInquiry.cpp
+	$(CPP) -c BalanceInquiry.cpp -o BalanceInquiry.o $(CXXFLAGS)
+
+Withdrawl.o: Withdrawl.cpp
+	$(CPP) -c Withdrawl.cpp -o Withdrawl.o $(CXXFLAGS)
+
+Deposit.o: Deposit.cpp
+	$(CPP) -c Deposit.cpp -o Deposit.o $(CXXFLAGS)
+
+Start.o: Start.cpp
+	$(CPP) -c Start.cpp -o Start.o $(CXXFLAGS)
+
+"RUN\ ATM.o": RUN\ ATM.cpp
+	$(CPP) -c "RUN ATM.cpp" -o "RUN ATM.o" $(CXXFLAGS)
